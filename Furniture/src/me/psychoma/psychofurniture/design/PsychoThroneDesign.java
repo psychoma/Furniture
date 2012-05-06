@@ -10,7 +10,7 @@ public class PsychoThroneDesign extends GenericBlockDesign
 {
 	public PsychoThroneDesign(PsychoFurniture plugin, int[] textureids, String dir)
 	{
-		texture = plugin.chair;
+		texture = plugin.throne;
 		setBoundingBox(0,0,0,1.0F,0.5F,1.0F).setQuadNumber(35);
 		setTexture(plugin, texture.getTexture()).setMinBrightness(1F).setMaxBrightness(1F);
 		

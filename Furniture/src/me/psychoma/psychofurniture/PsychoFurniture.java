@@ -3,6 +3,7 @@ package me.psychoma.psychofurniture;
 import java.util.logging.Level;
 
 
+import me.psychoma.psychofurniture.config.Configuration;
 import me.psychoma.psychofurniture.furniture.PsychoBlocks;
 import me.psychoma.psychofurniture.listener.PsychoBlockListener;
 import me.psychoma.psychofurniture.listener.PsychoSeatListener;
@@ -13,6 +14,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.block.design.Texture;
 
 public class PsychoFurniture extends JavaPlugin
@@ -51,6 +53,8 @@ public class PsychoFurniture extends JavaPlugin
         {
         	Bukkit.getLogger().log(Level.WARNING, "[PsychoFurniture] Vault plugin not found.");
         }
+        Configuration.start();
+        precache();
 		loadtextures();
 		Bukkit.getLogger().log(Level.INFO, "[PsychoFurniture] Loading pieces of furniture");
 		PsychoBlocks.registerBlocks(this);
@@ -61,11 +65,19 @@ public class PsychoFurniture extends JavaPlugin
 		getServer().getPluginManager().registerEvents(new PsychoSeatListener(this), this);
 	}
 
+	private void precache() {
+		SpoutManager.getFileManager().addToPreLoginCache(PsychoFurniture.this, Configuration.texture.getString("Table Texture"));
+		SpoutManager.getFileManager().addToPreLoginCache(PsychoFurniture.this, Configuration.texture.getString("Chair Texture"));
+		SpoutManager.getFileManager().addToPreLoginCache(PsychoFurniture.this, Configuration.texture.getString("Throne Texture"));
+		
+	}
+
+
 	private void loadtextures() 
 	{
-		table = new Texture(this, "http://dl.dropbox.com/u/50790929/Minecraft/Plugins/table.png", 256, 256, 16);
-		chair = new Texture(this, "http://dl.dropbox.com/u/50790929/Minecraft/Plugins/chair.png", 256, 256, 16);
-		throne = new Texture(this, "http://dl.dropbox.com/u/50790929/Minecraft/Plugins/throne.png", 256, 256, 16);
+		table = new Texture(this, Configuration.texture.getString("Table Texture"), 256, 256, 16);
+		chair = new Texture(this, Configuration.texture.getString("Chair Texture"), 256, 256, 16);
+		throne = new Texture(this, Configuration.texture.getString("Throne Texture"), 256, 256, 16);
 	}
 	
     private boolean setupPermissions()

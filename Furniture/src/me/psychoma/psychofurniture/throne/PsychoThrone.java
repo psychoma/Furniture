@@ -12,7 +12,7 @@ public class PsychoThrone extends GenericCubeCustomBlock
 	private PsychoFurniture plugin;
 	
 	public PsychoThrone(PsychoFurniture plugin,String name, int[] textureids, String dir) {
-		super(plugin, name, false, new GenericCubeBlockDesign(plugin, plugin.chair, textureids));
+		super(plugin, name, false, new GenericCubeBlockDesign(plugin, plugin.throne, textureids));
 		this.setBlockDesign(new PsychoThroneDesign(plugin, textureids, dir));
 		this.plugin = plugin;
 	}

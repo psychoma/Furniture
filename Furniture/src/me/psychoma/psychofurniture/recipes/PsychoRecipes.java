@@ -92,7 +92,7 @@ public class PsychoRecipes {
 		res_woodthrone = new SpoutItemStack(PsychoBlocks.woodthroneN, 1);
 		recipe = new SpoutShapedRecipe(res_woodthrone);
 		recipe.shape("BAB", "AAA", "B B");
-		recipe.setIngredient('A', MaterialData.goldIngot);
+		recipe.setIngredient('A', MaterialData.wood);
 		recipe.setIngredient('B', MaterialData.stick);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(recipe);
 		
