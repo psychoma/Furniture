@@ -4,6 +4,7 @@ import java.util.List;
 
 import me.psychoma.psychofurniture.PsychoFurniture;
 import me.psychoma.psychofurniture.utils.PsychoMethods;
+import net.minecraft.server.Block;
 
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
@@ -43,8 +44,8 @@ public class PsychoSeatListener implements Listener
 			}
 			else
 			{
-				if(block.getRelative(BlockFace.DOWN).getTypeId() == 0 || net.minecraft.server.Block.byId[block.getRelative(BlockFace.DOWN).getTypeId()].a() != true)
-					return;
+				if(block.getRelative(BlockFace.DOWN).getTypeId() == 0 || Block.byId[block.getRelative(BlockFace.DOWN).getTypeId()].a() != true)
+					return; 
 				Item drop = PsychoMethods.dropSeat(block);				
 				List<Item> drops = PsychoMethods.checkChair(drop);
 				if (drops != null) {

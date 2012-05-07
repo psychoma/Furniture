@@ -28,7 +28,7 @@ public class PsychoCraftListener implements Listener
 	{
 		if(event.isCancelled())
             return;
-		Inventory inv = event.getInventory();
+		Inventory inv = event.getInventory(); 
 		@SuppressWarnings("rawtypes")
 		List viewers = event.getViewers();
         Player player = null;
