@@ -163,7 +163,7 @@ public class PsychoBlockListener implements Listener
 	public void onChairBreak(BlockBreakEvent event)
 	{
 		block = (SpoutBlock) event.getBlock();
-		if(PsychoMethods.isWoodChair(block) || PsychoMethods.isIronChair(block) || PsychoMethods.isGoldChair(block) || PsychoMethods.isWoodThrone(block) || PsychoMethods.isIronThrone(block) || PsychoMethods.isGoldThrone(block))
+		if(PsychoMethods.isBarStool(block) || PsychoMethods.isSimpleChair(block) || PsychoMethods.isWoodChair(block) || PsychoMethods.isIronChair(block) || PsychoMethods.isGoldChair(block) || PsychoMethods.isWoodThrone(block) || PsychoMethods.isIronThrone(block) || PsychoMethods.isGoldThrone(block))
 		{
 			Item drop = PsychoMethods.dropSeat((SpoutBlock) event.getBlock());
 			

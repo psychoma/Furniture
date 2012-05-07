@@ -26,7 +26,31 @@ public class PsychoMethods
 
 	public static boolean isSeat(SpoutBlock block)
 	{
-		if (isWoodChair(block) || isIronChair(block) || isGoldChair(block) || isWoodThrone(block) || isIronThrone(block) || isGoldThrone(block))
+		if (isSimpleChair(block) || isBarStool(block) || isWoodChair(block) || isIronChair(block) || isGoldChair(block) || isWoodThrone(block) || isIronThrone(block) || isGoldThrone(block))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public static boolean isSimpleChair(SpoutBlock block)
+	{
+		if (block.getCustomBlock() == PsychoBlocks.woodenbarstool) 
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public static boolean isBarStool(SpoutBlock block)
+	{
+		if (block.getCustomBlock() == PsychoBlocks.woodenbarstool) 
 		{
 			return true;
 		}

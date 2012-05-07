@@ -1,12 +1,21 @@
 package me.psychoma.psychofurniture.furniture;
 
 import me.psychoma.psychofurniture.PsychoFurniture;
+import me.psychoma.psychofurniture.chair.Barstool;
 import me.psychoma.psychofurniture.chair.PsychoChair;
+import me.psychoma.psychofurniture.chair.SimpleChair;
 import me.psychoma.psychofurniture.table.PsychoTable;
+import me.psychoma.psychofurniture.table.SimpleTable;
 import me.psychoma.psychofurniture.throne.PsychoThrone;
 
 public class PsychoBlocks {
 	
+	public static Barstool woodenbarstool;
+	public static Barstool stonebarstool;
+	public static SimpleChair woodsimplechair;
+	public static SimpleChair stonesimplechair;
+	public static SimpleTable woodsimpletable;
+	public static SimpleTable stonesimpletable;
 	public static PsychoTable woodtable;
 	public static PsychoTable irontable;
 	public static PsychoTable goldtable;
@@ -64,7 +73,12 @@ public class PsychoBlocks {
 		goldthroneS = new PsychoThrone(plugin, "goldthroneN", new int[]{32,33,34,35,36,37}, "S");
 		goldthroneW = new PsychoThrone(plugin, "goldthroneW", new int[]{32,33,34,35,36,37}, "W");
 		goldthroneE = new PsychoThrone(plugin, "goldthroneE", new int[]{32,33,34,35,36,37}, "E");
-		
+		woodsimplechair = new SimpleChair(plugin, "simple woodchair", new int[] {0,1,2,0,0,0});
+		woodsimpletable = new SimpleTable(plugin, "simple woodtable", new int[] {0,1,2,0,0,0});
+		woodenbarstool = new Barstool(plugin, "woodenbarstool", new int[]{0,1,2,0,0,0});
+		stonesimplechair = new SimpleChair(plugin, "simple stonechair", new int[] {48,49,50,0,0,0});
+		stonesimpletable = new SimpleTable(plugin, "simple stonetable", new int[] {48,49,50,0,0,0});
+		stonebarstool = new Barstool(plugin, "stonbarstool", new int[]{48,49,50,0,0,0});
 	}
 
 }

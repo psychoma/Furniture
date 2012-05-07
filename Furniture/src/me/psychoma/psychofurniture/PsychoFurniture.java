@@ -69,7 +69,6 @@ public class PsychoFurniture extends JavaPlugin
 		SpoutManager.getFileManager().addToPreLoginCache(PsychoFurniture.this, Configuration.texture.getString("Table Texture"));
 		SpoutManager.getFileManager().addToPreLoginCache(PsychoFurniture.this, Configuration.texture.getString("Chair Texture"));
 		SpoutManager.getFileManager().addToPreLoginCache(PsychoFurniture.this, Configuration.texture.getString("Throne Texture"));
-		
 	}
 
 

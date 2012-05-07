@@ -22,6 +22,7 @@ public class PsychoRecipes {
     public static ItemStack res_woodthrone;
     public static ItemStack res_ironthrone;
     public static ItemStack res_goldthrone;
+    public static ItemStack res_woodenbarstool;
 	private static SpoutShapedRecipe recipe;
 
 	public static void registerRecipes(PsychoFurniture psychoFurniture) 
@@ -112,7 +113,13 @@ public class PsychoRecipes {
 		recipe.setIngredient('C', MaterialData.goldIngot);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(recipe);
 		
-		
+		res_woodenbarstool = new SpoutItemStack(PsychoBlocks.woodenbarstool, 1);
+		recipe = new SpoutShapedRecipe(res_woodenbarstool);
+		recipe.shape("AAA", " B ", " B ");
+		recipe.setIngredient('A', MaterialData.wood);
+		recipe.setIngredient('B', MaterialData.stick);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(recipe);
+	
 	}
 
 }
